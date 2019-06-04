@@ -4,33 +4,62 @@ public class Studyitus {
 	public static void main(String[] args) {
 		// Quiz 5 & 6
 
-		//Requirement 1
-		//String output = studying("Shivam");
-		//System.out.println(output);
+		//Testing Requirement 1
+		String output = studying("Shivam");
+		System.out.println(output);
 		
-		//Requirement 2
-		//String output = studying(null);
-		//System.out.println(output);
+		//Tesing Requirement 2
+		output = studying(null);
+		System.out.println(output);
 		
-		//Requirement 3
-		String output = studying("ROMIL");
+		//Testing Requirement 3
+		output = studying("ROMIL");
+		System.out.println(output);
+		
+		//Testing Requirement 4
+		output = studying("Romil,Joao");
 		System.out.println(output);
 			
 				
 	}
 	
-	public static String studying(String name) {
+	public static String studying(String names) {
 		
-		if(name == null) {
+		if(names == null) {
 			return "Nobody is studying";
 		
-		} else if(name.equals(name.toUpperCase())) {
-				return name + " IS STUDYING";
+		} else if(isPlural(names)) {
+			
+			int index = 0;
+			for(int i=0 ; i<names.length() ; i++) {
+				if(names.charAt(i) == ',') {
+					index = i;
+				}
+			}
+			
+			return names.substring(0,index) + " and " + names.substring(index+1, names.length()) + " are studying";
+		
+		
+		} else if(names.equals(names.toUpperCase())) {
+				return names + " IS STUDYING";
 		
 		} else {
-			return name + " is studying";
+			return names + " is studying";
 		
 		}
+	}
+	
+	public static boolean isPlural(String names) {
+		
+		for(int i=0 ; i<names.length() ; i++) {
+			
+			if(names.charAt(i) == ',') {
+				return true;
+			}
+			
+		}
+	
+		return false;
 	}
 
 }
