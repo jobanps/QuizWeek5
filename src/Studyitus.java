@@ -9,7 +9,11 @@ public class Studyitus {
 		//System.out.println(output);
 		
 		//Requirement 2
-		String output = studying(null);
+		//String output = studying(null);
+		//System.out.println(output);
+		
+		//Requirement 2
+		String output = studying("ROMIL");
 		System.out.println(output);
 				
 		
@@ -19,8 +23,27 @@ public class Studyitus {
 		
 		if(name == null) 
 			return "Nobody is studying";
+		else if(isUpper(name))
+			return name + " IS STUDYING";
 		else
 			return name + " is studying";
 	}
+	
+	public static boolean isUpper(String name) {
+		
+		String nameUpper = name.toUpperCase();
+		int index = 0;
+		for(int i=0; i < name.length(); i++) {
+			if(name.charAt(i) == nameUpper.charAt(i)) {
+				index++;
+			}
+		}
+		if(index == (name.length()))
+			return true;
+		else
+			return false;
+			
+	}
+	
 
 }
