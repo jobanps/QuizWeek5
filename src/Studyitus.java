@@ -12,38 +12,25 @@ public class Studyitus {
 		//String output = studying(null);
 		//System.out.println(output);
 		
-		//Requirement 2
+		//Requirement 3
 		String output = studying("ROMIL");
 		System.out.println(output);
+			
 				
-		
 	}
 	
 	public static String studying(String name) {
 		
-		if(name == null) 
+		if(name == null) {
 			return "Nobody is studying";
-		else if(isUpper(name))
-			return name + " IS STUDYING";
-		else
-			return name + " is studying";
-	}
-	
-	public static boolean isUpper(String name) {
 		
-		String nameUpper = name.toUpperCase();
-		int index = 0;
-		for(int i=0; i < name.length(); i++) {
-			if(name.charAt(i) == nameUpper.charAt(i)) {
-				index++;
-			}
+		} else if(name.equals(name.toUpperCase())) {
+				return name + " IS STUDYING";
+		
+		} else {
+			return name + " is studying";
+		
 		}
-		if(index == (name.length()))
-			return true;
-		else
-			return false;
-			
 	}
-	
 
 }
